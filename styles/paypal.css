@@ -1,0 +1,123 @@
+html, input[type="text"], input[type="submit"]{
+	font-family: 'PT Sans Narrow', sans-serif;
+	user-select: none;
+}
+
+img{
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+	-ms-user-drag: none;
+}
+
+hr.line {
+	border: 1px solid #98ddf1;
+}
+
+.footer hr.dotLine, hr.line4{
+	border-top: 1px dotted #9da3a6;
+}
+
+.paymentDetails, .buttons{
+	width: 45%;	
+}
+
+.imgHeader{
+	padding: 50px 0px;
+}
+
+.imgHeader a{
+	font-size: 14px;
+}
+.payContainer{
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:300px;
+  border: 1px solid #9da3a6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cvvContainer{
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:100px;
+  border: 1px solid #9da3a6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.payContainer:focus-within, .cvvContainer:focus-within{
+	border: 1px solid #203881;
+}
+
+.payContainer:focus-within i, .cvvContainer:focus-within i{
+  display: none;
+}
+
+.payContainer:focus-within .payBox, .cvvContainer:focus-within .cvv, .cvvContainer:focus-within .expiry, .payContainer:focus-within .cardNo{
+  grid-column:1/4;
+}
+
+.payContainer:focus-within .payBox::placeholder, .cvvContainer:focus-within .cvv::placeholder, , .payContainer:focus-within .cardNo::placeholder, , .cvvContainer:focus-within .expiry::placeholder{
+  color:transparent;
+}
+
+.payIcon, .payIcon1{
+  padding: 0.5rem;
+  grid-row:1;
+  grid-column:1/2;
+  z-index:2;
+}
+
+.payBox, .cvv, .cardNo, .expiry{
+  border: 0;
+  padding: 0.5rem;
+  grid-column:2/4;
+  grid-row:1;
+  outline:none;
+}
+
+.buttons{
+	padding: 10px;
+}
+
+.proceedBtn{
+	background-color: #9dc771;
+	border: none;
+	width:80%;
+	height: 8%;
+	transition: 0.3s;
+	border-radius: 4px;
+	color: white;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.proceedBtn:hover{
+	opacity: 0.8;
+	width:85%;
+	height:10%;
+}
+
+.footer{
+	width: 50%;
+
+}
+
+.firstFooter .link, .secondFooter .link{
+	text-decoration: none;
+	color: black;
+}
+
+.firstFooter .link:hover, .secondFooter .link:hover{
+	text-decoration: underline;
+	color: black;
+}
+
+.firstFooter{
+	text-align: left;
+}
+
+.secondFooter{
+	text-align: right;
+}

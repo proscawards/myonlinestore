@@ -1,0 +1,441 @@
+html{
+	font-family: 'Bebas Neue';
+	user-select: none;
+}
+
+img{
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+	-ms-user-drag: none;
+}
+
+body{
+	background-color: #E6E6FA;
+	padding-top: 120px;
+}
+
+/*<section class="topSection">*/
+.menu
+{
+    background-color: #BCC6CC;
+	text-align: right;
+	font-color: #FFFFFF;
+	padding: 5px 0px 5px;
+	font-size: 17px;
+}
+
+.menu a{
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.menu a:hover{
+	opacity: 0.8;
+}
+
+#header{
+	z-index:100;
+	position: fixed;
+	width: 99%;
+	overflow: hidden;
+	top: 0;
+	transition: 0.3s;
+	background-color: inherit;
+}
+
+/*<section class="midSection">*/
+
+.logo{
+	float: left;
+	background-color: #98AFC7;
+	padding: 5px;
+	position: relative;
+	transition: 0.3s;
+}
+
+.logo:hover{
+	opacity: 0.7;
+	padding: 7px;
+}
+
+.userInput, .checkCart{
+	float: left;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+
+.addToCart-btn a, .addToCart-btn{
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+.addToCart-btn, .cartLabel{
+	cursor: pointer;
+}
+
+.searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:850px;
+  border: none;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  transition: 0.3s;
+  
+}
+
+.searchContainer:focus-within i {
+  display: none;
+  opacity: 1;
+}
+
+.searchContainer:focus-within .searchBox{
+  grid-column:1;
+  opacity: 1;
+}
+
+.searchContainer:focus-within .searchBox::placeholder {
+  color:transparent;
+  opacity: 1;
+}
+
+.searchIcon {
+  padding: 0.5rem;
+  grid-row:1;
+  grid-column:1/2;
+  z-index:2;
+  transition: 0.3s;
+}
+
+.searchBox {
+  border: none;
+  padding: 0.5rem;
+  grid-column:2/4;
+  grid-row:1;
+  outline:none;
+  background: inherit;
+  width: 1000px;
+  transition: 0.3s;
+}
+
+.addToCart-btn{
+	width: 100%;
+	height: 5%;
+	border: none;
+	background-color: inherit;
+	font-family: inherit;
+	font-size: 20px;
+	cursor: pointer;
+	padding: 3px;
+	outline: none;
+	transition: 0.3s;
+}
+
+.addToCart-btn:hover{
+	opacity: 0.8;
+	background-color: #488AC7;
+	color: white;
+	font-size: 21px;
+	width: 105%;
+	height: 10%;
+	padding: 6px;
+	border-radius: 10px;
+	
+}
+
+/*<section class="categories">*/
+.categories{
+	background-color: #95B9C7;
+	text-align: center;
+	font-size: 30px;
+
+}
+
+.dropDown-menu {
+	float: left;
+	overflow: hidden;
+	display: inline;
+	width: 100%;
+	background-color: #95B9C7;
+	cursor: pointer;
+	transition: 0.3s;
+
+}
+
+/* Dropdown button */ 
+.dropDown-btn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font: inherit; /* Important for vertical align on mobile phones */
+	margin: 0; /* Important for vertical align on mobile phones */
+	cursor: pointer;
+}
+
+.dropDown-content {
+	display: none;
+	position: absolute;
+	background-color: #488AC7;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	padding: 15px;
+	color: white;
+	font-size: 18px;
+	width: 96.5%;
+	transition: 0.3s;
+}
+
+.dropDown-content a {
+	padding: 10px;
+	color: white;
+	text-decoration: none;
+	display: inline;
+	text-align: center;
+	font-size: 15px;
+	transition: 0.3s;
+}
+
+/* Show the dropdown menu on hover */
+.dropDown-menu:hover .dropDown-content {
+	display: block;
+}
+
+.dropDown-menu:active .dropDown-content {
+	display: block;
+}
+
+.columnHeader {
+	padding: 2px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	font-size: 15px;
+}
+
+.dropDown-content a:hover{background-color: #2B3856;}
+.dropDown-content .columnHeader:hover {text-decoration:underline;}
+.dropDown-menu:hover {background-color: #488AC7;}
+
+.column {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background-color: #488AC7;
+  height: 250px;
+}
+
+/* Style links inside the columns */
+.column a {
+  float: none;
+  color: white;
+  padding: 16px 10px;
+  text-decoration: none;
+  display: block;
+  font-size:14.5px;
+  text-align: left;
+  transition: 0.3s;
+  border-radius: 0px;
+}
+
+/* Add a background color on hover */
+.column a:hover {
+  background-color: #2B3856;
+  padding: 16px 16px;
+  border-radius: 4px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.selectionContainer{
+	padding: 25px 0px 25px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.text a{
+	text-decoration: none;
+	color: white;
+}
+
+.image {
+  display: inline;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.glow {
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+	overflow: hidden;
+}
+
+@-webkit-keyframes glow{
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+.glowText{
+	color: #fff;
+	text-align: center;
+	-webkit-animation: glowText 1s ease-in-out infinite alternate;
+	-moz-animation: glowText 1s ease-in-out infinite alternate;
+	animation: glowText 1s ease-in-out infinite alternate;
+	overflow: hidden;
+}
+
+@-webkit-keyframes glowText{
+  from {
+    font-size: 30px;
+	font-weight: normal;
+  }
+  
+  to {
+    font-size: 30.5px;
+	color: #8B008B;
+  }
+}
+
+.salesTitle{
+	background-color: #95B9C7;
+	text-align: center;
+	font-size: 30px;
+	z-index: 90;
+}
+
+.salesContainer{
+	position: relative;
+	max-width: 300px;
+	display: inline-block;
+	text-align: left;
+	padding: 10px 0px 10px;
+}
+
+.salesLabel{
+	text-decoration: none;
+	color: inherit;
+}
+
+.salesLabel{
+	font-size: 20px;
+}
+
+#offerLabel{
+	color: #98AFC7;
+}
+
+.swapImg{
+	position: relative;
+	display: inline-block;
+}
+
+.swapImg #secondImg{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.3s ease-in-out;
+}
+
+.swapImg:hover #secondImg{
+    display: inline;
+}
+
+.userName:hover, .userLogin:hover, .trackOrder:hover, .privacy:hover, .faq:hover{
+	color: white;
+}
+
+.userLogout:hover{
+	color: red;
+}
+
+.special a{
+	width:100%;
+	padding: 10px 10px;
+	transition: 0.3s;
+	font-size: 15px;
+}
+
+.special:hover a{
+	padding: 10px 50px;
+	font-size: 16px;
+}
+
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+border: 1px solid #95B9C7;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: #95B9C7;  
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #488AC7;  
+}

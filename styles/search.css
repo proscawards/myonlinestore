@@ -1,0 +1,48 @@
+html{
+	font-family: 'Bebas Neue';
+}
+
+.search{
+	text-align: center;
+	padding: 25.5px;	 
+	float: left;
+}
+
+.userInput{
+	float: left;
+}
+
+.checkCart{
+	float: left;
+	padding-left:156px;
+}
+.form-control{
+	height: 40px;
+	font-size: 20px;
+	float: left;
+}
+
+.search-btn{
+	float: left;
+	padding: 5px;	
+	border: none;
+	background-color: #488AC7;
+}
+
+.addToCart-btn{
+	padding: 4px 0;	
+	border: none;
+	background-color: inherit;
+	font-family: inherit;
+	font-size: 20px;
+}
+
+.search-btn:hover{
+	opacity: 0.8;
+	background-color: #2B3856;
+}
+
+.addToCart-btn:hover{
+	opacity: 0.8;
+	background-color: #488AC7;
+}

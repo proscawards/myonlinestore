@@ -1,0 +1,146 @@
+@media screen and (max-width: 540px) {
+    .flex-item-1 {
+        margin-top: 0px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .flex-item-1 {
+        margin-top: 0px;
+        width: auto;
+    }
+}
+
+h1[id="form_header"] {
+    line-height: 60px;
+    margin-left: 20px;
+    font-family: Roboto-Thin;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    font-family: OpenSans-Light;
+    color: white;
+    font-size: 40px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+body{
+	padding-top: 20px;
+	user-select: none;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-family: OpenSans-Regular;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+
+.regContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:400px;
+  border: 1px solid gray;
+  overflow: hidden;
+
+}
+
+.regContainer:focus-within i {
+  display: none;
+}
+
+.regContainer:focus-within .checkoutBox, .regContainer:focus-within .userPostcode, .regContainer:focus-within .userPhoneNo {
+  grid-column:1/4;
+}
+
+.regContainer:focus-within .checkoutBox::placeholder, .regContainer:focus-within .userPostcode::placeholder, .regContainer:focus-within .userPhoneNo::placeholder{
+  color:transparent;
+}
+
+.regIcon {
+  padding: 0.5rem;
+  grid-row:1;
+  grid-column:1/2;
+  z-index:2;
+  background: white;
+}
+
+.checkoutBox, .userPostcode, .userPhoneNo {
+  border: 0;
+  padding: 0.5rem;
+  grid-column:2/4;
+  grid-row:1;
+  outline:none;
+}
+
+#billSAddress .regIcon{
+	background-color: inherit;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  font-family: inherit;
+  font-size:13px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 15px 10px;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+#billSAddress{
+	transition: 0.3s;
+	max-height: 0%;
+	height: 100%;
+}
+
+#sameAdd:checked ~ #billSAddress{
+	max-height: 100%;
+}

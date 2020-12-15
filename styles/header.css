@@ -1,0 +1,109 @@
+html{
+	font-family: 'Bebas Neue';
+}
+
+
+.menuBar{
+    background-color: #BCC6CC;
+	padding: 5px 5px 5px 0px;
+    font-size: 17px;
+}
+
+.menuBar a{
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+	display: inline-block;
+	transition: 0.2;
+}
+
+
+header{
+	z-index:100;
+	position: fixed;
+	width: 98.8%;
+	overflow: hidden;
+	top: 0;
+	transition: 0.3s;
+	user-select: none;
+}
+
+.logo{
+	float: left;
+}
+
+.userInput{
+	float: right;
+}
+
+.searchContainer {
+
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:300px;
+  border: none;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  
+}
+
+.searchContainer:focus-within i {
+  display: none;
+}
+
+.searchContainer:focus-within .searchBox{
+  grid-column:1;
+}
+
+.searchContainer:focus-within .searchBox::placeholder {
+  color:transparent;
+}
+
+.searchIcon {
+  padding: 0.1rem;
+  grid-row:1;
+  grid-column:1/2;
+  z-index:1;
+}
+
+.searchBox {
+  border: none;
+  padding: 0.1rem;
+  grid-column:2/4;
+  grid-row:1;
+  outline:none;
+  background: inherit;
+  width: 1000px;
+}
+
+.home, .trackOrder, .privacy, .faq, .cart, .logo{
+	transition: 0.3s;
+}
+
+.home:hover, .trackOrder:hover, .privacy:hover, .faq:hover, .cart:hover{
+	color: white;
+}
+
+.logo:hover{
+	opacity:0.8;
+	color: black;
+}
+
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+border: 1px solid #95B9C7;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: #95B9C7;  
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #488AC7;  
+}

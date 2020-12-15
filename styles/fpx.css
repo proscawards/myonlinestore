@@ -1,0 +1,84 @@
+body{
+	font-family: "Calibri Light";
+	font-weight: bold;
+	user-select: none;
+}
+
+img{
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+	-ms-user-drag: none;
+}
+
+hr.line {
+	border: 1px solid #98ddf1;
+}
+hr.line1 {
+	position: relative;
+	border: 1px solid #2aa2c3;
+}	
+hr.line2 {
+	border: 0px solid white;
+}	
+.paymentDetails{
+	background-color: #f5f5f5;
+	padding: 10px;
+	box-shadow: 5px 5px 5px #ececee;
+	width:70%;
+	text-align: left;
+}
+.paymentHeader, .paymentChoice{
+	background-color: none;
+	padding: 10px;
+	width:70%;
+	text-align: left;	
+}
+.bankChoice {
+	cursor: pointer;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid transparent;
+	margin-bottom: 0;
+	outline: 0;
+}
+
+.bankChoice input[type="radio"] {
+	display:none;
+}
+
+[type=radio]:checked + img {
+	outline: 2px solid  #488AC7;
+	opacity: 0.8;
+	padding: 2px;
+}
+
+.bankChoice img{
+	width: 15%;
+	border: 0.3px solid black;
+	box-shadow: 5px 5px 5px #ececee;
+}
+
+.proceedBtn{
+	background-color: #637aaf;
+	border: none;
+	padding: 8px 20px;
+	border-radius: 7px;
+	color: white;
+	outline: none;
+	cursor: pointer;
+}
+
+.cancelBtn{
+	background-color: #94a2c5;
+	border: none;
+	padding: 8px 30px;
+	border-radius: 7px;
+	color: white;
+	outline: none;
+	cursor: pointer;
+}
+
+.proceedBtn:hover, .cancelBtn:hover{
+	opacity: 0.8;
+}

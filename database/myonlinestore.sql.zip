@@ -1,0 +1,288 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 30, 2020 at 04:43 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `myonlinestore`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `ADMIN_ID` int(5) NOT NULL,
+  `ADMIN_FNAME` varchar(30) NOT NULL,
+  `ADMIN_LNAME` varchar(30) NOT NULL,
+  `ADMIN_EMAIL` varchar(30) NOT NULL,
+  `ADMIN_PASS` varchar(15) NOT NULL,
+  `ACC_TYPE` enum('0','1') NOT NULL COMMENT '0 for user 1 for admin'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`ADMIN_ID`, `ADMIN_FNAME`, `ADMIN_LNAME`, `ADMIN_EMAIL`, `ADMIN_PASS`, `ACC_TYPE`) VALUES
+(10000, 'Admin', 'OSC', 'proscawards@myonlinestore.com', 'admin@mOS', '1'),
+(10001, 'Admin', 'Kelvin', 'kelvinyong99@myonlinestore.com', 'admin@mOS', '1'),
+(10002, 'Admin', 'Rishi', 'rishidharan@myonlinestore.com', 'admin@mOS', '1'),
+(10003, 'Admin', 'Murali', 'muralidharan@myonlinestore.com', 'admin@mOS', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item`
+--
+
+CREATE TABLE `item` (
+  `ITEM_ID` int(5) NOT NULL,
+  `ITEM_NAME` tinytext NOT NULL,
+  `ITEM_CAT` tinytext NOT NULL,
+  `ITEM_SECTION` varchar(20) NOT NULL,
+  `ITEM_SUBSEC` varchar(20) NOT NULL,
+  `ITEM_COLOUR` tinytext NOT NULL,
+  `ITEM_BRAND` varchar(20) NOT NULL,
+  `ITEM_COUNT` int(100) NOT NULL,
+  `ITEM_PRICE` decimal(7,2) NOT NULL,
+  `ITEM_PROMO` decimal(7,2) NOT NULL,
+  `ADMIN_ID` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`ITEM_ID`, `ITEM_NAME`, `ITEM_CAT`, `ITEM_SECTION`, `ITEM_SUBSEC`, `ITEM_COLOUR`, `ITEM_BRAND`, `ITEM_COUNT`, `ITEM_PRICE`, `ITEM_PROMO`, `ADMIN_ID`) VALUES
+(1000, 'Men Plain Sweatshirt', 'Sweatshirt', 'Men', 'Clothing', 'Green, Black, Burgundy, Pink', 'H&M', 100, '39.99', '0.00', 10000),
+(1001, 'Men Plain Hoodie', 'Hoodie', 'Men', 'Clothing', 'Green, PiBlue, White, Black, Burgundy, Pink', 'H&M', 100, '74.95', '0.00', 10000),
+(1002, 'Solid Single-Breasted Formal Blazer', 'Formal Wear', 'Men', 'Clothing', 'Black, Burgundy', 'Peter England', 100, '186.49', '0.00', 10000),
+(1003, 'The Bomber Jacket | Uniform', 'Jacket', 'Men', 'Clothing', 'Navy, Slate, Black, Ochre', 'Everlane', 100, '880.00', '387.00', 10000),
+(1004, '502™ Taper Fit Jeans', 'Jeans', 'Men', 'Pants', 'Blue', 'Levi\'s', 100, '259.00', '0.00', 10000),
+(1005, 'Big Trefoil Track Pants', 'Jogger', 'Men', 'Pants', 'Black', 'Adidas Originals', 99, '330.00', '259.00', 10000),
+(1006, 'Water-Repellent Double-Breasted Coat', 'Outerwear', 'Men', 'Clothing', 'Navy, Black', 'Zara', 100, '559.00', '0.00', 10000),
+(1007, 'Cotton Crew Neck Half Sleeve T-Shirt', 'Tops', 'Men', 'Clothing', 'Dkgreen, Navy, White, Black, Burgundy, Ochre', 'Uniqlo', 100, '59.90', '0.00', 10000),
+(1008, 'Polished-Leather Derby Shoes', 'Leather Shoes', 'Men', 'Shoes', 'Burgundy, Black', 'MR PORTER', 100, '2100.00', '0.00', 10000),
+(1009, 'Ultraboost 20 Shoes', 'Running Shoes', 'Men', 'Shoes', 'Grey2, Green2, Blue&Red, Black', 'Adidas Performance', 100, '780.00', '0.00', 10000),
+(1010, 'Arizona Birko Flor - Stone', 'Slippers', 'Men', 'Shoes', 'Stone, Brown, Black', 'Birkenstock', 100, '296.00', '0.00', 10000),
+(1011, 'Chuck Taylor All Star', 'Sneakers', 'Men', 'Shoes', 'White, Black, Navy, Pink, Purple, Charcoal', 'Converse', 100, '227.00', '0.00', 10000),
+(1012, 'Nike Air Zoom BB NXT', 'Basketball Shoes', 'Men', 'Shoes', 'Black&Lime, White&Purple', 'Nike', 100, '749.00', '0.00', 10000),
+(1013, 'Nike Phantom Vision Elite', 'Football Shoes', 'Men', 'Shoes', 'Black&Gold, Customizable', 'Nike', 0, '99999.99', '0.00', 10000),
+(1014, 'Classic Chronograph Leather Strap Watch', 'Watches', 'Men', 'Accessories', 'Black, Rosegold, Navy, Tan', 'Timex', 100, '574.14', '0.00', 10000),
+(1015, 'Aldo Potoroo Sunglasses', 'Sunglasses', 'Men', 'Accessories', 'Bronze', 'Aldo', 98, '149.00', '112.00', 10000),
+(1016, 'Mumu Weddings - Desert Solid Black Tie', 'Necktie', 'Men', 'Accessories', 'Black, Navy, Arose, Jade, Merlot, Cake', 'Tie Bar', 100, '91.00', '0.00', 10000),
+(1017, 'Leather Automatic Buckle Belt', 'Belts', 'Men', 'Accessories', 'Black', 'Pedro', 100, '219.00', '175.20', 10000),
+(1018, '3-In-1 Wallet', 'Wallet', 'Men', 'Accessories', 'Saddle, Black', 'Coach', 100, '1250.00', '0.00', 10000),
+(1019, 'Nike Tech Hip Pack', 'Waist Bag', 'Men', 'Accessories', 'Black, Frost, Maroon, Photon, Olive', 'Nike', 100, '165.00', '0.00', 10000),
+(2000, 'DP Seafoam Edge To Edge Blazer', 'Formal Wear', 'Women', 'Clothing', 'Green', 'Dorothy Perkins', 100, '199.00', '0.00', 10001),
+(2001, 'Superdry Block Portland Crew Sweatshirt', 'Sweatshirt', 'Women', 'Clothing', 'Pink', 'Superdry', 100, '299.95', '0.00', 10001),
+(2002, 'Gucci Stars And Moon Print Hoodie', 'Hoodie', 'Women', 'Clothing', 'Black', 'Gucci', 100, '16720.00', '10217.00', 10001),
+(2003, 'Calvin Klein Flower Bomber Jacket', 'Jacket', 'Women', 'Clothing', 'Black', 'Calvin Klein', 100, '1039.00', '0.00', 10001),
+(2004, 'J. Lopez x Guess Gwen High Rise Corset Jeans', 'Jeans', 'Women', 'Pants', 'White', 'Guess', 100, '599.95', '0.00', 10001),
+(2005, 'Calvin Klein A-Outline Logo Jogger', 'Jogger', 'Women', 'Pants', 'Black', 'Calvin Klein', 100, '549.95', '0.00', 10001),
+(2006, 'Fendi Oversized black rabbit fur Coat', 'Outerwear', 'Women', 'Clothing', 'Black', 'Fendi', 100, '44840.00', '16008.00', 10001),
+(2007, 'Mango Ruffled Cotton Shirt', 'Tops', 'Women', 'Clothing', 'White', 'Mango', 100, '150.90', '0.00', 10001),
+(2008, 'Mango Classic Leather Pumps', 'Formal Shoes', 'Women', 'Shoes', 'Black', 'Mango', 100, '229.00', '0.00', 10001),
+(2009, 'ALDO Caraa Heels', 'High Heels', 'Women', 'Shoes', 'Pink', 'Aldo', 100, '659.00', '0.00', 10001),
+(2010, 'Therapy Ashby Boots', 'Boots', 'Women', 'Shoes', 'Black', 'Therapy', 100, '2310.00', '0.00', 10001),
+(2011, 'Balenciaga Triple S Women\'s Sneakers', 'Sneakers', 'Women', 'Shoes', 'Black', 'BALENGIAGA', 100, '255.00', '0.00', 10001),
+(2012, 'Balenciaga Logo Printed Women\'s Flip Flops', 'Slippers', 'Women', 'Shoes', 'Black', 'BALENGIAGA', 100, '3420.00', '2310.00', 10001),
+(2013, 'Pandora Circle Logo T-bar Heart Necklace', 'Necklace', 'Women', 'Accessories', 'Silver', 'Pandora', 100, '619.00', '0.00', 10001),
+(2014, 'Swarovski Attract Motif Ring', 'Ring', 'Women', 'Accessories', 'Silver', 'Swarovski', 100, '499.00', '0.00', 10001),
+(2015, 'Diva Glitzy Glam Disco Ball Earrings', 'Earring', 'Women', 'Accessories', 'Gold', 'Tomei', 100, '840.00', '0.00', 10001),
+(3001, 'Apple iMac 21.5\" with Retina 4K Display', 'Desktops', 'Electronic', 'Devices', 'Silver', 'Apple', 100, '5599.00', '0.00', 10000),
+(3002, 'HP ENVY x360 Laptop 13.3 Inch', 'Laptops', 'Electronic', 'Devices', 'Black, Tan, Photon', 'Hewlett-Packard', 100, '3799.00', '0.00', 10000),
+(3003, 'Iphone 11 Pro Max', 'Smartphones', 'Electronic', 'Devices', 'MGreen, SGray, Silver1, Gold1', 'Apple', 100, '6899.00', '0.00', 10000),
+(3004, 'Panasonic 65-Inch 4K Smart UHD TV ', 'Televisions', 'Electronic', 'Devices', 'Black', 'Panasonic', 100, '5899.00', '4199.00', 10000),
+(4001, 'Samsung 630L Side-by-Side Refrigerator', 'Refrigerators', 'Kitchen', 'Appliances', 'Black', 'Samsung', 100, '5599.00', '5399.00', 10000),
+(4002, 'Elba 2 Burners Built in Glass Hob', 'Cookings', 'Kitchen', 'Appliances', 'Black', 'Elba', 100, '1099.00', '963.00', 10000),
+(4003, 'Xiaomi 1.6L Smart Non Stick Rice Cooker', 'Cookers', 'Kitchen', 'Appliances', 'White', 'Xiaomi', 100, '409.00', '0.00', 10000),
+(5001, 'Calcimate Plus 800 (240 tablets)', 'Bones & Joints', 'Health', 'Medicines', '', 'GNC', 100, '204.90', '0.00', 10000),
+(5002, 'L-Glutathione 50mg (50 vegetabs)', 'Whitening', 'Health', 'Medicines', '', 'GNC', 100, '80.90', '0.00', 10000),
+(5003, 'Fish Oil Plus CoQ-10 (60 Ent-Coated Softgel)', 'Omega & Fish Oils', 'Health', 'Medicines', '', 'GNC', 100, '294.25', '250.00', 10000),
+(6001, 'Fender Custom Shop 1958 Electric Guitar', 'Musical Instruments', 'Lifestyles', 'Indoor', 'BWhite', 'Fender', 100, '15420.00', '0.00', 10000),
+(6002, 'Aqua Sphere Vista Pro Dark Lens Goggles', 'Swimming', 'Sports', 'Indoor', 'TBlack', 'Aqua Shpere', 99, '238.64', '222.00', 10000),
+(6003, 'Anti-Shock Mountain Walking Pole', 'Hiking', 'Sports', 'Outdoor', 'Grey', 'Forclaz', 100, '69.00', '50.00', 10000),
+(6004, 'LURE ESSENTIAL TELE 240 LURE FISHING SET', 'Fishing', 'Lifestyles', 'Outdoor', 'RBlack', 'Caperlan', 100, '79.00', '0.00', 10000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `ORDER_ID` int(5) NOT NULL,
+  `ORDER_DATE` date NOT NULL,
+  `UNIT_PRICE` decimal(7,2) NOT NULL,
+  `QUANTITY` int(5) NOT NULL,
+  `TOTAL_PRICE` decimal(7,2) NOT NULL,
+  `USER_ID` int(5) NOT NULL,
+  `ITEM_ID` int(5) NOT NULL,
+  `PAYMENT_ID` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`ORDER_ID`, `ORDER_DATE`, `UNIT_PRICE`, `QUANTITY`, `TOTAL_PRICE`, `USER_ID`, `ITEM_ID`, `PAYMENT_ID`) VALUES
+(90000, '2020-09-20', '112.00', 2, '224.00', 10000, 1015, 1),
+(90001, '2020-09-20', '259.00', 1, '259.00', 10000, 1005, 2),
+(90002, '2020-09-30', '222.00', 1, '242.00', 10000, 6002, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders_item`
+--
+
+CREATE TABLE `orders_item` (
+  `ORDERS_ITEM_ID` int(5) NOT NULL,
+  `ORDERS_ID` int(11) NOT NULL,
+  `ITEM_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `PAYMENT_ID` int(2) NOT NULL,
+  `PAYMENT_METH` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`PAYMENT_ID`, `PAYMENT_METH`) VALUES
+(1, 'Credit Card'),
+(2, 'Bank Transfer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `USER_ID` int(5) NOT NULL,
+  `USER_FNAME` varchar(30) NOT NULL,
+  `USER_LNAME` varchar(30) NOT NULL,
+  `USER_EMAIL` varchar(30) NOT NULL,
+  `USER_PASS` mediumtext NOT NULL,
+  `USER_ADDRESS` mediumtext NOT NULL,
+  `USER_PHONE` bigint(12) NOT NULL,
+  `USER_SEQQUES` longtext NOT NULL,
+  `USER_SEQANS` varchar(30) NOT NULL,
+  `ACC_TYPE` enum('0','1') NOT NULL COMMENT '0 for user 1 for admin',
+  `ORDERS_MADE` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`USER_ID`, `USER_FNAME`, `USER_LNAME`, `USER_EMAIL`, `USER_PASS`, `USER_ADDRESS`, `USER_PHONE`, `USER_SEQQUES`, `USER_SEQANS`, `ACC_TYPE`, `ORDERS_MADE`) VALUES
+(10000, 'sc', 'ong', 'proscawards@myonlinestore.com', '202cb962ac59075b964b07152d234b70', 'MMU, Persiaran Multimedia, 63100, Cyberjaya, Selangor.', 6018299232, '', 'I\'m Admin', '1', 2),
+(10001, 'Admin', 'Kelvin', 'kelvinyong99@myonlinestore.com', '626d9f784c2b6af9a8479f56714e46f0', '', 0, '', 'I\'m Admin', '1', 0),
+(10002, 'Admin', 'Rishi', 'rishidharan@myonlinestore.com', '626d9f784c2b6af9a8479f56714e46f0', '', 0, '', 'I\'m Admin', '1', 0),
+(10003, 'Admin', 'Murali', 'muralidharan@myonlinestore.com', '626d9f784c2b6af9a8479f56714e46f0', '', 0, '', 'I\'m Admin', '1', 0),
+(10004, 'Test', 'User', 'testinguser@gmail.com', 'testing', '', 0, '', 'I\'m Tester', '0', 10),
+(10005, 'sc', 'ong', 'maliya@gmail.com', '202cb962ac59075b964b07152d234b70', 'MMU, Persiaran Multimedia,\r\n63100 Cyberjaya, Selangor.', 0, 'What is your favorite food?', 'ku a', '0', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`ADMIN_ID`);
+
+--
+-- Indexes for table `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`ITEM_ID`),
+  ADD KEY `ADMIN_ID` (`ADMIN_ID`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`ORDER_ID`),
+  ADD KEY `ITEM_ID` (`ITEM_ID`),
+  ADD KEY `PAYMENT_ID` (`PAYMENT_ID`),
+  ADD KEY `USER_ID` (`USER_ID`);
+
+--
+-- Indexes for table `orders_item`
+--
+ALTER TABLE `orders_item`
+  ADD PRIMARY KEY (`ORDERS_ITEM_ID`),
+  ADD KEY `ORDERS_ID` (`ORDERS_ID`),
+  ADD KEY `ITEM_ID` (`ITEM_ID`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`PAYMENT_ID`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`USER_ID`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`ADMIN_ID`) REFERENCES `admin` (`ADMIN_ID`);
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`ITEM_ID`) REFERENCES `item` (`ITEM_ID`),
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`PAYMENT_ID`) REFERENCES `payment` (`PAYMENT_ID`),
+  ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`USER_ID`);
+
+--
+-- Constraints for table `orders_item`
+--
+ALTER TABLE `orders_item`
+  ADD CONSTRAINT `orders_item_ibfk_1` FOREIGN KEY (`ORDERS_ID`) REFERENCES `orders` (`ORDER_ID`),
+  ADD CONSTRAINT `orders_item_ibfk_2` FOREIGN KEY (`ITEM_ID`) REFERENCES `item` (`ITEM_ID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

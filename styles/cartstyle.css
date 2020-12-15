@@ -1,0 +1,85 @@
+html{
+	font-family: 'Bebas Neue';
+}
+
+body{
+	background-color: #E6E6FA;
+	padding-top: 20px;
+}
+
+table{
+	margin: auto;
+	padding: auto;
+}
+.summary, .summary .tabHeader, .summary .tabData{
+    padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+	  
+.tabHeader{
+	color: #FFFFFF;
+	background-color: #ADD8E6;
+}
+
+.tabData{
+	background-color: #F2F2F2;
+}
+
+.item_style td{
+	font-weight: normal;
+}
+
+.totalC td{
+	background-color: #B2B4F0 ;
+	text-align:center;
+	font-weight: bold;
+
+}
+
+.price{
+	font-weight: normal;
+}
+
+.button-container {
+	text-align: center;
+	margin-top: 10px;
+
+}
+
+.button-container input{
+	background-color: #c1e1ec ;
+	border: none;
+	height: 30px;
+	width: 180px;
+	border-radius: 30px;
+	font-size: 20px;
+	opacity: 0.6;
+	transition: 0.3s;
+  	font-family: inherit;
+	outline: none;
+	cursor: pointer;
+}
+
+.button-container input:hover{
+	height: 40px;
+	width: 200px;
+	background-color: #86c5da;
+	color: white;
+	opacity: 0.8;
+}
+
+.removeItem, .removeAll{
+	outline: none;
+	cursor: pointer;
+	font-family: inherit;
+	background-color: inherit;
+	color: inherit;
+	border: none;
+	font-size: 15px;
+}
+
+.removeItem:hover, .removeAll:hover{
+	color: red;
+	opacity: 0.8;
+}
